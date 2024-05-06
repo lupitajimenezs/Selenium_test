@@ -6,10 +6,7 @@ import pytest
 class TestPositiveScenarios:
     @pytest.mark.login
     @pytest.mark.positive
-    def test_positive_login(self):
-        #Iniciamos la confi del navegador.
-        driver = webdriver.Firefox()
-        time.sleep(3)
+    def test_positive_login(self, driver):
         #Indicamos la pagina que vamos a visitar.
         driver.get("https://practicetestautomation.com/practice-test-login/")
         time.sleep(2)
