@@ -10,7 +10,7 @@ class TestPositiveScenarios:
         #Indicamos la pagina que vamos a visitar.
         driver.get("https://practicetestautomation.com/practice-test-login/")
         time.sleep(2)
-
+        driver.close()
         #Buscando los elementos de la pagina.
         username_locator = driver.find_element(By.NAME, "username")
         username_locator.send_keys("student")
