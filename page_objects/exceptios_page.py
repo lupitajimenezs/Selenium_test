@@ -20,3 +20,17 @@ class ExceptionsPage(BasePage):
     def add_second_row(self):
         super()._click(self.__add_button_locator)
         super()._wait_until_element_is_visible(self.__row_2_input_element)
+
+    def is_row2_displayed(self) -> bool:
+        return super().is_displayed(self.__row_2_input_element)
+
+    def add_second_food(self, food: str):
+        super()._type(self.__row_2_input_element, food)
+        super()._click(self.__row_2_save_button)
+        super()._wait_until_element_is_visible(self.__confirmation_element)
+
+    def get_confirmarion_message(self) -> str:
+        return super()._get_text(self.__confirmation_element, time=3)
+    
+    def modify_row_1_input(self) -> str:
+        super()._click(self.__row_1_edit_button)
